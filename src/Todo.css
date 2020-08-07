@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+}
+
+.todo__list{
+    float: right;
+}
+
+.delete{
+    padding-top: 6px;
+    
+}
