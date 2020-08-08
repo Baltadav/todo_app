@@ -1,12 +1,18 @@
 .App {
   text-align: center;
+  background-color: whitesmoke;
 }
 
+.App__title{
+  text-decoration: underline;
+  letter-spacing: 2px;
+  margin: 20px;
 }
 
-.blabla{
+.App__ul{
   margin: 0px;
   padding: 0px;
   margin: 0px auto;
-  width: 60%;
+  width: 70%;
   text-align: center;
+}
