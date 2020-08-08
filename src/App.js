@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     //se activa cuando se carga app.js
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
-      setTodos(snapshot.docs.map(doc => ({id: doc.id, todo: doc.data().todo})));
+      setTodos(snapshot.docs.map(doc => ({id: doc.id, text: doc.data().text})));
     })
   }  , []);
 
@@ -21,35 +21,34 @@ function App() {
     //Esto pasa con el click del boton
     event.preventDefault();
     
-    //Agrega el todo del input a la base de datos
+    //Agrega la tarea del input a la base de datos
+    //Agrega timestamp a la base de datos
     db.collection('todos').add({
-      todo: input,
+      text: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
-
-    //setTodos([...todos, input]); *Local
+    
     setInput(''); //resetea el input
   }
 
   return (
     <div className="App">
-      <h1>TO-DO List</h1>
-
+      <h1 className="App__title">Lista de tareas</h1>
       <form>
         <FormControl>
-          <InputLabel >Escribe un To-Do</InputLabel>
+          <InputLabel >Escribe una tarea</InputLabel>
           <Input value={input} onChange={event => setInput(event.target.value)} />
         </FormControl>
         <br></br>
         <br></br>
         <Button disabled ={!input} variant="contained" color="primary" type="submit" onClick={addTodo} >
-          Add Todo
+          Añade una tarea
         </Button>
       </form>
 
-      <ul className="blabla">
+      <ul className="App__ul">
         {todos.map(todo =>(
-          <Todo todo={todo} />
+          <Todo todo={todo}/>
         ))}
       </ul>
 
