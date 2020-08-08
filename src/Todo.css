@@ -2,11 +2,47 @@
     margin: 0;
 }
 
-.todo__list{
-    float: right;
+.List{
+    background-color: rgb(238, 238, 238);
+    min-width: 10%;
+    min-height: 70px;
+    margin: 15%;
+    border-radius: 15px;
+    box-shadow: 5px 4px 20px -5px rgba(89,89,89,1)
+}
+.List:first-child{
+    margin-top: 30px;
 }
 
-.delete{
-    padding-top: 6px;
-    
+.List__Edit{
+    float: right;
+    margin-right: 15px;
+}
+
+.List__Delete{
+    float: right;
+    font-size: 5px;
+    width: 8%;
+}
+
+/* MODAL */
+.Modal__Title{
+    text-align: center;
+    align-items: center;
+    margin: 5px ;
+    margin-bottom: 10px;
+}
+
+.Modal__Input{
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    margin: 0px auto;
+    margin-top: 0px;
+    margin-left: 15px;
+    width: 60%;
+}
+
+.Modal__Button{
+    margin-right: 20px;
+    float: right;
 }
